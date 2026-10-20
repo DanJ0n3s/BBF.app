@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0e0e0e" />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="BBF" />
+
+<title>Shop — BlackBoy Fortune</title>
+<meta name="description" content="Shop caps, tracksuits, tees, sweaters and sleeveless pieces from BlackBoy Fortune. No prices online — order via WhatsApp for your total.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body data-page="shop">
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><img src="assets/img/logo-white.png" class="mark" alt="BlackBoy Fortune"></a>
+    <nav class="desktop">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="shop.html" data-nav="shop">Shop</a>
+      <div class="nav-item" id="stories-item">
+        <a href="#" id="stories-toggle">Stories ▾</a>
+        <div class="dd-menu">
+          <a href="who-we-are.html" data-nav="who-we-are">Who We Are </a>
+          <a href="our-story.html" data-nav="our-story">Our Story </a>
+          <a href="blog.html" data-nav="blog">Blog </a>
+          <a href="reviews.html" data-nav="reviews">Reviews </a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-right">
+      <button class="cart-btn" id="cart-open" aria-label="Open cart">Cart<span class="cart-count" id="cart-count">0</span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobile-menu">
+
+  <a class="mlink" href="index.html" data-nav="home">Home</a>
+  <a class="mlink" href="shop.html" data-nav="shop">Shop</a>
+  <div class="mm-label">Stories</div>
+  <a class="msub" href="who-we-are.html" data-nav="who-we-are">Who We Are </a>
+  <a class="msub" href="our-story.html" data-nav="our-story">Our Story </a>
+  <a class="msub" href="blog.html" data-nav="blog">Blog </a>
+  <a class="msub" href="reviews.html" data-nav="reviews">Reviews </a>
+  <div class="mm-contact">
+    <a href="mailto:blackboyfortune@gmail.com">blackboyfortune@gmail.com</a>
+    <a href="tel:+2348113264642">0811 326 4642</a>
+  </div>
+
+</div>
+
+<main>
+<section class="page" id="page-shop">
+
+  <div class="phero"><div class="phero-bg"><img src="assets/img/rack-shop.jpg" alt="" loading="lazy"></div><div class="container">
+    <span class="kicker">The Shop</span>
+    <h1>Pick Your <span class="grad-text">Piece</span></h1>
+    <p class="lead">7 styles • 21 colourways — every piece carrying the BlackBoy Fortune logo.</p>
+    <div class="how-strip">
+      <div class="how"><b>1</b><p><b style="color:var(--text)">Pick &amp; choose</b><br>Select your merch and colourway.</p></div>
+      <div class="how"><b>2</b><p><b style="color:var(--text)">Add to cart</b><br>Stack up everything you want.</p></div>
+      <div class="how"><b>3</b><p><b style="color:var(--text)">Order on WhatsApp</b><br>We reply with the total price for your order.</p></div>
+    </div>
+    <div class="price-note"><b>No prices shown online.</b> Add your pieces to the cart, tap <b>Order</b>, and we'll respond on WhatsApp with the price of your total order. Just have a question? Tap <b>Enquiry</b> instead — same number, no pressure.</div>
+    <div class="filters">
+      <button class="filter-chip on" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="caps">Caps</button>
+      <button class="filter-chip" data-filter="tees">T-Shirts</button>
+      <button class="filter-chip" data-filter="sweaters">Sweaters</button>
+      <button class="filter-chip" data-filter="tracksuits">Tracksuits</button>
+      <button class="filter-chip" data-filter="sleeveless">Sleeveless</button>
+    </div>
+  </div></div>
+  <div class="container" style="padding-bottom:80px">
+    <div class="shop-grid" id="shop-grid"></div>
+  </div>
+
+</section>
+</main>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <h3>Your Cart <span id="drawer-count"></span></h3>
+    <button class="icon-btn" id="cart-close" aria-label="Close cart">✕</button>
+  </div>
+  <p class="drawer-note"><b>No prices online.</b> Tap <b>ORDER</b> and we'll reply on WhatsApp with the total. Just asking something? Tap <b>ENQUIRY</b>.</p>
+  <div class="drawer-items" id="drawer-items"></div>
+  <div class="drawer-foot">
+    <div class="drawer-total"><span>Total pieces</span><strong id="drawer-total">0</strong></div>
+    <button class="btn btn-block" id="order-btn">Order via WhatsApp</button>
+    <button class="btn-ghost btn-block enq-btn" id="enquiry-btn">❓ Make an Enquiry</button>
+    <button class="btn-ghost btn-block clear-btn" id="clear-btn">Clear Cart</button>
+  </div>
+</aside>
+
+<a class="wa-float" href="https://wa.me/2348113264642?text=Hello%20BlackBoy%20Fortune!%20I%20have%20an%20enquiry." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav class="tabbar" id="tabbar" aria-label="App navigation">
+<a href="index.html" data-tab="home">Home</a>
+<a href="shop.html" data-tab="shop">Shop</a>
+<button type="button" id="tab-cart">Cart<span class="tab-badge" id="tab-badge"></span></button>
+<button type="button" id="tab-orders">Orders</button>
+<button type="button" id="tab-stories" data-tab="stories">Stories</button>
+</nav>
+<div class="sheet" id="sheet" aria-hidden="true"><div class="sheet-card" role="dialog" aria-labelledby="sheet-title"><div class="sheet-head"><h3 id="sheet-title"></h3><button class="icon-btn" id="sheet-close" aria-label="Close">✕</button></div><div id="sheet-body"></div></div></div>
+<div class="install-bar" id="install-bar" hidden><span id="install-text"></span><button class="btn" id="install-btn" type="button">Install</button><button class="icon-btn" id="install-x" type="button" aria-label="Dismiss">✕</button></div>
+
+<div id="toast" role="status"></div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo foot-logo"><img src="assets/img/logo-white.png" class="mark" alt="BlackBoy Fortune"></a>
+        <p>Lagos-born streetwear. Luxury for the people. Comfort for the struggle. Freedom in every stitch.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/blackboyfortune.ng?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 3.1a6.7 6.7 0 100 13.4 6.7 6.7 0 000-13.4zm0 11a4.3 4.3 0 110-8.6 4.3 4.3 0 010 8.6zm6.9-11.3a1.6 1.6 0 11-3.2 0 1.6 1.6 0 013.2 0z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@blackboyfortune1?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <div class="foot-links">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="who-we-are.html">Who We Are</a>
+          <a href="our-story.html">Our Story</a>
+          <a href="blog.html">Blog</a>
+          <a href="reviews.html">Reviews</a>
+        </div>
+      </div>
+      <div>
+        <h4>Reach Us</h4>
+        <div class="foot-links">
+          <a href="mailto:blackboyfortune@gmail.com">Email Us</a>
+          <a href="tel:+2348113264642">0811 326 4642</a>
+          <a href="https://wa.me/2348113264642?text=Hello%20BlackBoy%20Fortune!%20I%20have%20an%20enquiry." target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <h4>The Movement</h4>
+        <p style="color:var(--muted);font-size:.88rem">No prices online — pick your piece, send your order on WhatsApp, and we'll reply with your total. Be your own person. Wear it like you earned it.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 BlackBoy Fortune. Lagos, Nigeria. All rights reserved.</span>
+      <span>Luxury for the people Freedom in every stitch</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shop.js"></script>
+</body>
+</html>
